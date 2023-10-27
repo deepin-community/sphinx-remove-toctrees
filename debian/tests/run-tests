@@ -1,0 +1,9 @@
+#!/bin/bash 
+set -e
+
+cp -r sphinx_remove_toctrees/tests "$AUTOPKGTEST_TMP"
+for py in $(py3versions -r 2>/dev/null)
+do cd "$AUTOPKGTEST_TMP"
+  echo "Testing with $py:"
+  http_proxy= $py -m pytest -v
+done

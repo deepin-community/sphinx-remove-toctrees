@@ -1,0 +1,6 @@
+# github was chosen for upstream source because the pypi didn't
+# include the package tests.
+version=4
+opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*@ARCHIVE_EXT@)%@PACKAGE@-$1%" \
+    https://github.com/executablebooks/sphinx-remove-toctrees/tags \
+    (?:.*?/)?v?@ANY_VERSION@@ARCHIVE_EXT@

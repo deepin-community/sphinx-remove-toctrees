@@ -1,0 +1,7 @@
+Tests: run-tests
+Depends: @,
+ python3-all,
+ python3-bs4,
+ python3-myst-parser,
+ python3-pytest,
+ python3-sphinx-book-theme,

@@ -1,4 +1,8 @@
 #!/usr/bin/make -f
 
+export PYBUILD_NAME=sphinx-remove-toctrees
 %:
-	dh $@
+	dh $@ --with python3 --buildsystem=pybuild
+
+# Skip tests as it depends on myst_parser which isn't pacakged for debian
+.PHONY: override_dh_auto_test
